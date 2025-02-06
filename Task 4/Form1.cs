@@ -1,8 +1,7 @@
-namespace lab1
+namespace Task_4
 {
     public partial class Form1 : Form
     {
-        
         public Form1()
         {
             InitializeComponent();
@@ -14,7 +13,17 @@ namespace lab1
             return numbers;
         }
 
-        private void btnSort_Click(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
             int[] numbers = { 3, 1, 5, 2, 4 };
             int[] sortedNumbers = proceduralSort((int[])numbers);
