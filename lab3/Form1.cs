@@ -9,13 +9,25 @@ namespace lab3
 
         public class Book
         {
-            public string Title { get; set; }
+            public string? Title { get; set; }
 
-            public string Author { get; set; }
+            public string? Author { get; set; }
 
             public virtual string GetInfo()
             {
                 return $"{Title} by {Author}";
+            }
+
+            public void validate()
+            {
+                if (string.IsNullOrWhiteSpace(Title))
+                {
+                    throw new ArgumentException("Title cannot be empty.");
+                }
+                if (string.IsNullOrEmpty(Author))
+                {
+                    throw new ArgumentException("Author cannot be empty.");
+                }
             }
         }
 
@@ -27,22 +39,46 @@ namespace lab3
             {
                 return $"{Title} - Issue {issueNumber}";
             }
+
+            public void validate()
+            {
+                if (int.IsNegative(issueNumber))
+                {
+                    throw new ArgumentException("IssueNumber cannot be less than 0.");
+                }
+                if (string.IsNullOrEmpty(Title))
+                {
+                    throw new ArgumentException("Title cannot be empty.");
+                }
+            }
         }
 
         public class textBook : Book
         {
-            public string subject { get; set; }
+            public string? subject { get; set; }
 
             public override string GetInfo()
             {
                 return $"{Title} - Subject: {subject}";
+            }
+
+            public void validate()
+            {
+                if (string.IsNullOrEmpty(Title))
+                {
+                    throw new ArgumentException("Title cannot be empty.");
+                }
+                if (string.IsNullOrEmpty(subject))
+                {
+                    throw new ArgumentException("Subject cannot be empty.");
+                }
             }
         }
 
         public class audioBook : Book
         {
             public int duration { get; set; }
-            public string narrator { get; set; }
+            public string? narrator { get; set; }
 
             public override string GetInfo()
             {
@@ -53,7 +89,7 @@ namespace lab3
         public void loadBooks(List<Book> book, ListBox listbox)
         {
             listbox.Items.Clear();
-            foreach(var books in book)
+            foreach (var books in book)
             {
                 listbox.Items.Add(books.GetInfo());
             }
@@ -86,6 +122,11 @@ namespace lab3
             };
 
             loadBooks(books, bookListBox);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
