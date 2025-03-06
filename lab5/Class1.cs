@@ -8,7 +8,7 @@ using static lab5.Form1;
 
 namespace lab5
 {
-    internal class BookstoreContext : DbContext
+    public class BookstoreContext : DbContext
     {
         public DbSet<Book> Books {  get; set; }
         public DbSet<Author> Authors {  get; set; }

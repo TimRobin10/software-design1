@@ -32,8 +32,14 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lab5", "lab5\lab5.csproj", "{7C8BDD2C-A4FC-4B03-B8A7-AD6163851D96}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lab6", "lab6\lab6.csproj", "{D0822CAF-A07F-4985-91DA-440AB7B0575F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7C8BDD2C-A4FC-4B03-B8A7-AD6163851D96} = {7C8BDD2C-A4FC-4B03-B8A7-AD6163851D96}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lab7", "lab7\lab7.csproj", "{C654B4EF-0A5C-4974-842A-AF5ACD0E038A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7C8BDD2C-A4FC-4B03-B8A7-AD6163851D96} = {7C8BDD2C-A4FC-4B03-B8A7-AD6163851D96}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "lab8", "lab8\lab8.csproj", "{2CC0B5AB-7F1A-43A0-98B8-27868DE7FD53}"
 EndProject
